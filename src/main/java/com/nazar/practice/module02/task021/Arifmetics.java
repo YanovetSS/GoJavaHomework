@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Arifmetics {
     public static void main(String[] args) {
-        int[] intArray = {1, 2, 3, 4, 5, 6, 7, -8, 9, 10};
+        int[] intArray = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
         double[] doubleArray = {101.24d, 202.50d, 10.29d, -28.55d, -66.98d};
         Arifmetics object = new Arifmetics();
         object.printSumOfArray(intArray);//sum
@@ -88,7 +88,7 @@ public class Arifmetics {
 
     public void printMaxPositiveValueOfArray(int[] intArray){
         int maxPositiveValueOfArray = intArray[0];
-        for (int i = 0; i <intArray.length ; i++) {
+        for (int i = 1; i <intArray.length ; i++) {
             if(intArray[i]>0){
                 if(maxPositiveValueOfArray < intArray[i]){
                     maxPositiveValueOfArray = intArray[i];
@@ -105,7 +105,7 @@ public class Arifmetics {
 
     public void printMaxPositiveValueOfArray(double[] doubleArray) {
         double maxPositiveValueOfArray = doubleArray[0];
-        for (int i = 0; i < doubleArray.length; i++) {
+        for (int i = 1; i < doubleArray.length; i++) {
             if (doubleArray[i] > 0) {
                 if (maxPositiveValueOfArray < doubleArray[i]) {
                     maxPositiveValueOfArray = doubleArray[i];
