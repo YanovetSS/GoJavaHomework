@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Arifmetics {
     public static void main(String[] args) {
-        int[] intArray = {10, 2, -3, -4, -5, -6, -7, -8, 9, -1};
+        int[] intArray = {1, 2, 3, 4, 5, 6, 7, -8, 9, 10};
         double[] doubleArray = {101.24d, 202.50d, 10.29d, -28.55d, -66.98d};
         Arifmetics object = new Arifmetics();
         object.printSumOfArray(intArray);//sum
@@ -86,21 +86,25 @@ public class Arifmetics {
         System.out.println("Min value of doubleArray:" + minValueOfArray);
     }
 
-    // Max positive
-    public void printMaxPositiveValueOfArray(int[] intArray) {
-        int maxPositiveValueOfArray = 0;
-        for (int i = 0; i < intArray.length; i++) {
-            if (intArray[i] > 0) {
-                if (maxPositiveValueOfArray < intArray[i]) {
+    public void printMaxPositiveValueOfArray(int[] intArray){
+        int maxPositiveValueOfArray = intArray[0];
+        for (int i = 0; i <intArray.length ; i++) {
+            if(intArray[i]>0){
+                if(maxPositiveValueOfArray < intArray[i]){
                     maxPositiveValueOfArray = intArray[i];
                 }
             }
         }
-        System.out.println("Max positive value of intArray:" + maxPositiveValueOfArray);
+        if(maxPositiveValueOfArray< 0 ){
+            System.out.println("All elements on intArray are less then zero");
+        }
+        else {
+            System.out.println("Max positive value of intArray: " + maxPositiveValueOfArray);
+        }
     }
 
     public void printMaxPositiveValueOfArray(double[] doubleArray) {
-        double maxPositiveValueOfArray = 0;
+        double maxPositiveValueOfArray = doubleArray[0];
         for (int i = 0; i < doubleArray.length; i++) {
             if (doubleArray[i] > 0) {
                 if (maxPositiveValueOfArray < doubleArray[i]) {
@@ -108,7 +112,12 @@ public class Arifmetics {
                 }
             }
         }
-        System.out.println("Max positive value of doubleArray:" + maxPositiveValueOfArray);
+        if(maxPositiveValueOfArray < 0 ){
+            System.out.println("All elements on doubleArray are less then zero");
+        }
+        else {
+            System.out.println("Max positive value of doubleArray:" + maxPositiveValueOfArray);
+        }
     }
 
     //multiplication
