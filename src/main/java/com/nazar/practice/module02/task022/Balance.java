@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Created by MakeMeSm1Le- on 01.02.2017.
  */
 public class Balance {
+    private static final double commisionWithdrawMoney = 0.05;
     public static void main(String[] args) {
         Balance object = new Balance();
         int balanceOfMoney = 10000;
@@ -19,10 +20,10 @@ public class Balance {
     }
 
     public void printAndcalculationCurrentUserBalance(int balanceOfMoney, int withdrawUserMoney) {
-        if (balanceOfMoney >= withdrawUserMoney + 0.05 * withdrawUserMoney) {
+        if (balanceOfMoney >= withdrawUserMoney + commisionWithdrawMoney * withdrawUserMoney) {
             System.out.println("Operation is successful; "
-                    + 0.05 * withdrawUserMoney + "; "
-                    + (balanceOfMoney - (withdrawUserMoney + 0.05 * withdrawUserMoney)));
+                    + commisionWithdrawMoney * withdrawUserMoney + "; "
+                    + (balanceOfMoney - (withdrawUserMoney + commisionWithdrawMoney * withdrawUserMoney)));
         } else {
             System.out.println("Sorry, but you want to take too much");
         }
