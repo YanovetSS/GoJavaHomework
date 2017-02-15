@@ -4,9 +4,10 @@ package com.nazar.practice.module03.task033;
  * Created by MakeMeSm1Le- on 15.02.2017.
  */
 public class CollegeStudent extends Student {
-   private String collegeName;
+    private String collegeName;
     private int rating;
-    private long id ;
+    private long id;
+
     // dwa kak v studenta
     public CollegeStudent(String firstName, String lastName, int group) {
         super(firstName, lastName, group);
@@ -15,6 +16,7 @@ public class CollegeStudent extends Student {
     public CollegeStudent(String lastName, Course[] coursesTaken) {
         super(lastName, coursesTaken);
     }
+
     // swoy
     public CollegeStudent(String firstName, String lastName, int group, String collegeName, int rating, long id) {
         super(firstName, lastName, group);
@@ -22,7 +24,8 @@ public class CollegeStudent extends Student {
         this.rating = rating;
         this.id = id;
     }
-//get
+
+    //get
     public String getCollegeName() {
         return collegeName;
     }
@@ -34,7 +37,8 @@ public class CollegeStudent extends Student {
     public long getId() {
         return id;
     }
-//set
+
+    //set
     public void setCollegeName(String collegeName) {
         this.collegeName = collegeName;
     }

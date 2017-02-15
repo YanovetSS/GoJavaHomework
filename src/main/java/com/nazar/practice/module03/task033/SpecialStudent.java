@@ -6,6 +6,7 @@ package com.nazar.practice.module03.task033;
 public class SpecialStudent extends CollegeStudent {
     private long secretKey;
     private String email;
+
     // 2 kak v CollegeStudent
     public SpecialStudent(String firstName, String lastName, int group) {
         super(firstName, lastName, group);

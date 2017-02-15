@@ -20,7 +20,8 @@ public class Student {
         this.lastName = lastName;
         this.coursesTaken = coursesTaken;
     }
-// getters
+
+    // getters
     public String getFirstName() {
         return firstName;
     }
