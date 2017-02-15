@@ -9,6 +9,7 @@ public class Bird {
         someBird.singBird();
     }
 
+
     public void singBird() {
         System.out.println("I am walking" + "\nI am flying" + "\nI am singing" + "\nI am Bird");
     }
