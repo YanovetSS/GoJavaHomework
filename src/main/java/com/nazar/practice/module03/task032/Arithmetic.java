@@ -7,8 +7,7 @@ import java.util.Scanner;
  */
 public class Arithmetic {
     public int addFirstAndSecondIntValue(int first, int second) {
-        int sumOfIntNumbers;
-        return sumOfIntNumbers = first + second;
+        return first + second;
     }
 
     public static void main(String[] args) {

@@ -21,6 +21,9 @@ public class Student {
         this.coursesTaken = coursesTaken;
     }
 
+    public Student() {
+    }
+
     // getters
     public String getFirstName() {
         return firstName;

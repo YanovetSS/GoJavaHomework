@@ -19,12 +19,10 @@ public class Sollution {
         CollegeStudent someExampleStudent8 = new CollegeStudent("Nazar", "Yanovets", 6);
         CollegeStudent someExampleStudent9 = new CollegeStudent("Yanovets",
                 new Course[]{someStudent4, someStudent5});
-        CollegeStudent someExampleStudent10 = new CollegeStudent(
-                "Nazar", "Yanovets", 6, "kpi", 1000, 1002);
+        CollegeStudent someExampleStudent10 = new CollegeStudent("kpi", 1000, 1002);
         SpecialStudent someSpecialStudent11 = new SpecialStudent("Nazar", "Yanovets", 6);
         SpecialStudent someSpecialStudent12 = new SpecialStudent(
                 "Nazar", "Yanovets", 6, "kpi", 1000, 2000);
-        SpecialStudent someSpecialStudent13 = new SpecialStudent("Yanovets",
-                new Course[]{someStudent1, someStudent2, someStudent3, someStudent4, someStudent5}, 1234678901);
+        SpecialStudent someSpecialStudent13 = new SpecialStudent(100000, "Yanovetswork@gmail.com");
     }
 }

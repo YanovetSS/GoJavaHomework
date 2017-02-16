@@ -18,11 +18,15 @@ public class CollegeStudent extends Student {
     }
 
     // swoy
-    public CollegeStudent(String firstName, String lastName, int group, String collegeName, int rating, long id) {
-        super(firstName, lastName, group);
+
+
+    public CollegeStudent(String collegeName, int rating, long id) {
         this.collegeName = collegeName;
         this.rating = rating;
         this.id = id;
+    }
+
+    public CollegeStudent() {
     }
 
     //get

@@ -5,10 +5,6 @@ package com.nazar.practice.module03.task032;
  */
 public class Adder extends Arithmetic {
     public boolean checkStrongestIntValue(int firstIntValue, int secondIntValue) {
-        if (firstIntValue >= secondIntValue) {
-            return true;
-        } else {
-            return false;
-        }
+        return firstIntValue >= secondIntValue;
     }
 }

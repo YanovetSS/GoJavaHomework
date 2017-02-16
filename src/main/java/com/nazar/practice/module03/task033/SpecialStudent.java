@@ -13,13 +13,14 @@ public class SpecialStudent extends CollegeStudent {
     }
 
     public SpecialStudent(String firstName, String lastName, int group, String collegeName, int rating, long id) {
-        super(firstName, lastName, group, collegeName, rating, id);
+        super(firstName, lastName, group);
     }
 
-    public SpecialStudent(String lastName, Course[] coursesTaken, long secretKey) {
-        super(lastName, coursesTaken);
+    public SpecialStudent(long secretKey, String email) {
         this.secretKey = secretKey;
+        this.email = email;
     }
+
     //get
 
     public long getSecretKey() {
