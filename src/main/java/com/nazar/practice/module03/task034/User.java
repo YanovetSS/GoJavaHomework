@@ -2,9 +2,7 @@ package com.nazar.practice.module03.task034;
 
 import java.util.Scanner;
 
-/**
- * Created by MakeMeSm1Le- on 15.02.2017.
- */
+
 public class User {
     private String name;
     private Integer balance;
