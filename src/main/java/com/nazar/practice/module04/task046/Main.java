@@ -1,5 +1,6 @@
 package com.nazar.practice.module04.task046;
 
+import com.nazar.practice.module04.task041.Bank;
 import com.nazar.practice.module04.task041.ChinaBank;
 import com.nazar.practice.module04.task041.EUBank;
 import com.nazar.practice.module04.task041.USBank;
@@ -38,13 +39,14 @@ public class Main {
         bankSystem.fundUser(user1,10000);
         bankSystem.transferMoney(user1,user2,1000);
         bankSystem.paySalery(user1);
-
+        System.out.println("Money paid for all time in company: "+euBank.moneyPaidMonhlyForSalery(user1));
         System.out.println("");
         System.out.println("Work with second euBank user!");
         bankSystem.withdrawOfUser(user2,500);
         bankSystem.fundUser(user2, 500);
         bankSystem.transferMoney(user2,user1, 10000);
         bankSystem.paySalery(user2);
+        System.out.println("Money paid for all time in company: "+euBank.moneyPaidMonhlyForSalery(user2));
 
         System.out.println("");
         System.out.println("Work with first usBank user!");
@@ -52,6 +54,7 @@ public class Main {
         bankSystem.fundUser(user3, 500);
         bankSystem.transferMoney(user3,user4, 10000);
         bankSystem.paySalery(user4);
+        System.out.println("Money paid for all time in company: "+usBank.moneyPaidMonhlyForSalery(user3));
 
         System.out.println("");
         System.out.println("Work with second usBank user!");
@@ -59,6 +62,7 @@ public class Main {
         bankSystem.fundUser(user4, 500);
         bankSystem.transferMoney(user4,user3, 10000);
         bankSystem.paySalery(user4);
+        System.out.println("Money paid for all time in company: "+usBank.moneyPaidMonhlyForSalery(user4));
 
         System.out.println("");
         System.out.println("Work with first chinaBank user!");
@@ -66,6 +70,7 @@ public class Main {
         bankSystem.fundUser(user5, 500);
         bankSystem.transferMoney(user5,user6, 10000);
         bankSystem.paySalery(user5);
+        System.out.println("Money paid for all time in company: "+chinaBank.moneyPaidMonhlyForSalery(user5));
 
         System.out.println("");
         System.out.println("Work with second chinaBank user!");
@@ -73,6 +78,6 @@ public class Main {
         bankSystem.fundUser(user6, 1000);
         bankSystem.transferMoney(user6,user5, 10000);
         bankSystem.paySalery(user6);
-        
+        System.out.println("Money paid for all time in company: "+chinaBank.moneyPaidMonhlyForSalery(user6));
     }
 }

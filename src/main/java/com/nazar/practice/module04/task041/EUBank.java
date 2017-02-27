@@ -1,6 +1,7 @@
 package com.nazar.practice.module04.task041;
 
 import com.nazar.practice.module04.task042.Currency;
+import com.nazar.practice.module04.task044.User;
 
 import java.util.Scanner;
 
@@ -62,8 +63,8 @@ public class EUBank extends Bank {
         return 0;
     }
 
-    public double moneyPaidMonhlyForSalery() {
-        return 0;
+    public double moneyPaidMonhlyForSalery(User user) {
+        return user.getMonthsOfEmployment()* user.getSalery();
     }
 
     public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, long rating, long totalCapital) {

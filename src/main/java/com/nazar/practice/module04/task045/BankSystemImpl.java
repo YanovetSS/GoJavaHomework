@@ -11,22 +11,22 @@ public class BankSystemImpl implements BankSystem {
 
     public void withdrawOfUser(User user, int amount) {
         System.out.println("withdrawMoney****");
-      if(amount> user.getBank().getLimitOfWithdrawal()){
-          System.out.println("Sorry, you want take too much");
-      }else{
-          System.out.println("Commision:" + amount*user.getBank().getMonthlyRate());
-          System.out.println(" balance of " + user.getName()+" is :"+user.getBalance());
-      }
+        if (amount > user.getBank().getLimitOfWithdrawal()) {
+            System.out.println("Sorry, you want take too much");
+        } else {
+            System.out.println("Commision:" + amount * user.getBank().getMonthlyRate());
+            System.out.println(" balance of " + user.getName() + " is :" + user.getBalance());
+        }
 
     }
 
     public void fundUser(User user, int amount) {
         System.out.println("fund user****");
         if (amount > user.getBank().getLimitOfFunding()) {
-            System.out.println("sorry, but we have funding limit:" +user.getBank().getLimitOfFunding());
+            System.out.println("sorry, but we have funding limit:" + user.getBank().getLimitOfFunding());
         } else {
-            user.setBalance(user.getBalance()+amount);
-            System.out.println("new balance of "+user.getName()+" " + user.getBalance());
+            user.setBalance(user.getBalance() + amount);
+            System.out.println("new balance of " + user.getName() + " " + user.getBalance());
         }
     }
 
@@ -51,3 +51,4 @@ public class BankSystemImpl implements BankSystem {
                 + user.getBalance());
     }
 }
+

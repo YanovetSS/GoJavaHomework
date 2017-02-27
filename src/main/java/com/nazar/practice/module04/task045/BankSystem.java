@@ -8,4 +8,5 @@ public interface BankSystem {
     void fundUser(User user , int amount);
     void transferMoney(User fromUser,User toUser,int amount);
     void paySalery(User user);
+
 }
