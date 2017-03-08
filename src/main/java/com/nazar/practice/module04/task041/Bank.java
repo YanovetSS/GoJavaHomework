@@ -1,16 +1,16 @@
 package com.nazar.practice.module04.task041;
 
 import com.nazar.practice.module04.task042.Currency;
-import com.nazar.practice.module04.task044.User;
 
 abstract public class Bank {
 
-    long id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployees;
-    long rating;
-    long totalCapital;
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOFEmployee;
+    private long rating;
+    private long totalCapital;
 
 //create contructor
 
@@ -23,7 +23,7 @@ abstract public class Bank {
         this.totalCapital = totalCapital;
     }
 
-    //create getMethods
+//create getMethods
 
     public long getId() {
         return id;
@@ -84,6 +84,6 @@ abstract public class Bank {
     public abstract int getCommission(int summ);
 
     public double moneyPaidMonhlyForSalery() {
-        return 0.0;
+        return avrSalaryOFEmployee * numberOfEmployees;
     }
 }

@@ -1,13 +1,9 @@
 package com.nazar.practice.module04.task045;
 
 
-import com.nazar.practice.module04.task042.Currency;
 import com.nazar.practice.module04.task044.User;
 
-import java.util.Scanner;
-
 public class BankSystemImpl implements BankSystem {
-    Currency currency;
 
     public void withdrawOfUser(User user, int amount) {
         System.out.println("withdrawMoney****");
@@ -15,7 +11,8 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("Sorry, you want take too much");
         } else {
             System.out.println("Commision:" + amount * user.getBank().getMonthlyRate());
-            System.out.println(" balance of " + user.getName() + " is :" + user.getBalance());
+            user.setBalance(user.getBalance() - amount - amount * user.getBank().getMonthlyRate());
+            System.out.println("New balance of User" + user.getName() + " is : " + user.getBalance());
         }
 
     }
@@ -29,20 +26,22 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("new balance of " + user.getName() + " " + user.getBalance());
         }
     }
+    /*Треба провірити чи однакові валюти у юзерів,  і по факту треба для першого реалізувати
+    */
 
     public void transferMoney(User fromUser, User toUser, int amount) {
-        System.out.println("transfers****");
-        // даю новому юзеру його баланс + гроші які переводить fromUser
-        toUser.setBalance(toUser.getBalance() + amount);
-        System.out.println("toUser" + "(" + toUser.getName() + ")" + " have a new balance: " + toUser.getBalance());
-        // записую нове значення балансу юзеру який переводить гроші
-        if (fromUser.getBank().getMonthlyRate() == 0) {
-            fromUser.setBalance(fromUser.getBalance() - amount);
+        if (fromUser.getBank().getCurrency() == toUser.getBank().getCurrency()) {
+            toUser.setBalance(toUser.getBalance() + amount);
+            if (amount < (fromUser.getBalance() + amount * fromUser.getBank().getMonthlyRate())) {
+                fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getMonthlyRate());
+            } else {
+                System.out.println("You want transfer too many...see you current balance");
+            }
         } else {
-            fromUser.setBalance(fromUser.getBalance() - (amount * fromUser.getBank().getMonthlyRate() + amount));
+            System.out.println("Please follow the transactions between the same-named currency");
         }
+        System.out.println("toUser" + "(" + toUser.getName() + ")" + " have a new balance: " + toUser.getBalance());
         System.out.println("from user" + "(" + fromUser.getName() + ")" + "have a new balance: " + fromUser.getBalance());
-
     }
 
     public void paySalery(User user) {
