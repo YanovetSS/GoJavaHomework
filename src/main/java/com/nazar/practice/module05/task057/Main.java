@@ -6,7 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Controller objectForDoSomethink  = new Controller();
-        objectForDoSomethink.requestRooms(100, 1,"Ukraine" , "Kiev");
+        Controller objectForDoSomethink = new Controller();
+        objectForDoSomethink.requestRooms(100, 1, "Ukraine", "Kiev");
+        objectForDoSomethink.requestRooms(400, 4, "Sonce", "Lviv");
+        objectForDoSomethink.requestRooms(1,1,"lalal","lalal");
     }
 }
