@@ -2,31 +2,31 @@ package com.nazar.practice.module06.task064;
 
 public class CitizenFactory {
 
-    private class Englishman implements Citizen {
+    private static class Englishman implements Citizen {
         public void sayHello() {
             System.out.println("Hello");
         }
     }
 
-    private class Chineeseman implements Citizen {
+    private static class Chineeseman implements Citizen {
         public void sayHello() {
             System.out.println("Hello CHineesman");
         }
     }
 
-    private class Russianman implements Citizen {
+    private static class Russianman implements Citizen {
         public void sayHello() {
             System.out.println("Привет");
         }
     }
 
-    private class Italianman implements Citizen {
+    private static class Italianman implements Citizen {
         public void sayHello() {
             System.out.println("Hello Italiamman");
         }
     }
 
-   public  Citizen returnHuman(String somethink) {
+   public static Citizen returnHuman(String somethink) {
         if (somethink.equals("English")) {
             return new Englishman();
         } else if (somethink.equals("Chine")) {
