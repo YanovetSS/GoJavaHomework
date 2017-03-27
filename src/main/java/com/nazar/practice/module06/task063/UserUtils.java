@@ -2,7 +2,10 @@ package com.nazar.practice.module06.task063;
 
 import com.nazar.practice.module06.task062.User;
 
-public class UserUtils {
+public final class UserUtils {
+    private UserUtils() {
+    }
+
     // write
     //User[] uniqueUsers(User[] users) – находит и возвращает уникальных пользователей (пользователи одинаковы, когда все их поля совпадают)
     public static User[] uniqueUsers(User[] users) {

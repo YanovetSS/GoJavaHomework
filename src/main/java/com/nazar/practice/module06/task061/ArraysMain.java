@@ -16,5 +16,10 @@ public class ArraysMain {
         System.out.println("Array Multiplication: "+ArraysUtils.MultiplicationOfArray(array));
         System.out.println("modulus first/last element's: "+ArraysUtils.firsDivisionLastValueModuleOfArray(array));
         System.out.println("Second largest element: " + ArraysUtils.secondLargestValueOfArray(array));
+
+        int a=2;
+        int b = 4;
+        double c;
+        c= (double)2*Math.PI;
     }
 }

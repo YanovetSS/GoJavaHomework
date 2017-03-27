@@ -3,7 +3,11 @@ package com.nazar.practice.module06.task061;
 import java.util.Arrays;
 
 public final class ArraysUtils {
-    public static int SumOfArray(int[] intArray) {
+    // не можемо створювати об*єкти в інших класа, тому що приватний конструктор
+    private ArraysUtils() {
+    }
+
+    public final static int SumOfArray(int[] intArray) {
         int resultSumOfArray = 0;
         for (int i = 0; i < intArray.length; i++) {
             resultSumOfArray += intArray[i];
@@ -11,7 +15,7 @@ public final class ArraysUtils {
         return resultSumOfArray;
     }
 
-    public static int MaxValueOfArray(int[] intArray) {
+    public final static int MaxValueOfArray(int[] intArray) {
         int maxValueOfArray = intArray[0];
         for (int i = 0; i < intArray.length; i++) {
             if (maxValueOfArray < intArray[i]) {
@@ -21,7 +25,7 @@ public final class ArraysUtils {
         return maxValueOfArray;
     }
 
-    public static int MinValueOfArray(int[] intArray) {
+    public final static int MinValueOfArray(int[] intArray) {
         int minValueOfArray = intArray[0];
         for (int i = 0; i < intArray.length; i++) {
             if (minValueOfArray > intArray[i]) {
@@ -32,7 +36,7 @@ public final class ArraysUtils {
     }
 
 
-    public static int MaxPositiveValueOfArray(int[] intArray) {
+    public final static int MaxPositiveValueOfArray(int[] intArray) {
         int maxPositiveValueOfArray = intArray[0];
         for (int i = 1; i < intArray.length; i++) {
             if (intArray[i] > 0) {
@@ -47,7 +51,7 @@ public final class ArraysUtils {
             return maxPositiveValueOfArray ;
     }
 
-    public static int MultiplicationOfArray(int[] intArray) {
+    public final static int MultiplicationOfArray(int[] intArray) {
         int resultMultiplicationOfArray = 1;
         for (int i = 0; i < intArray.length; i++) {
             resultMultiplicationOfArray *= intArray[i];
@@ -55,17 +59,17 @@ public final class ArraysUtils {
         return resultMultiplicationOfArray;
     }
 
-    public static int firsDivisionLastValueModuleOfArray(int[] intArray) {
+    public final static int firsDivisionLastValueModuleOfArray(int[] intArray) {
         return intArray[0] % intArray[intArray.length - 1];
     }
 
-    public static int  secondLargestValueOfArray(int[] intArray) {
+    public final static int  secondLargestValueOfArray(int[] intArray) {
         int[] sortedArray = Arrays.copyOf(intArray, intArray.length);
         Arrays.sort(sortedArray);
         return sortedArray[sortedArray.length - 2];
     }
 
-    public static int[] reverse(int[] array) {
+    public final static int[] reverse(int[] array) {
         int[] reversedArray = new int[array.length];
 
         for (int i = array.length-1; i >= 0; i--) {
@@ -77,7 +81,7 @@ public final class ArraysUtils {
         return reversedArray;
     }
 
-    public static int[] findEvenElements(int[] array) {
+    public final static int[] findEvenElements(int[] array) {
         int numberOfEvenElements = 0;
         for (int element : array) {
             if (element % 2 == 0) {
