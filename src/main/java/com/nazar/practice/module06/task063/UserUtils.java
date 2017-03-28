@@ -8,7 +8,7 @@ public final class UserUtils {
 
     // write
     //User[] uniqueUsers(User[] users) – находит и возвращает уникальных пользователей (пользователи одинаковы, когда все их поля совпадают)
-    public static User[] uniqueUsers(User[] users) {
+    public final static User[] uniqueUsers(User[] users) {
         boolean flag = true;
         int index = 0;
         User[] uniqueUserArray = new User[users.length];
@@ -28,7 +28,7 @@ public final class UserUtils {
     }
 
 
-    public static User[] usersWithContitionalBalance(User[] users, int balance) {
+    public final static User[] usersWithContitionalBalance(User[] users, int balance) {
         User[] usersArrayForTrueBalances = new User[users.length];
         int index = 0;
         for (User user : users) {
@@ -39,14 +39,14 @@ public final class UserUtils {
         return deleteEmptyUsers(usersArrayForTrueBalances);
     }
 
-    public static User[] paySalaryToUsers(User[] users) {
+    public final static User[] paySalaryToUsers(User[] users) {
         for (User user : users) {
             user.setBalance(user.getBalance() + user.getSalery());
         }
         return users;
     }
 
-    public static long[] getUsersId(User[] users) {
+    public final static long[] getUsersId(User[] users) {
         long[] idArray = new long[users.length];
         int index = 0;
         for (User user : users) {
@@ -56,7 +56,7 @@ public final class UserUtils {
     }
 
     //delete fucking null
-    public static User[] deleteEmptyUsers(User[] users) {
+    public final static User[] deleteEmptyUsers(User[] users) {
         int counter = 0;
         for (User user : users) {
             if (user == null) {
