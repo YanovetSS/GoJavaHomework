@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BookingComAPI implements API {
+    @Override
+    public Room[] getRooms() {
+        return rooms;
+    }
 
     @Override
     public Room[] findRooms(int price, int persons, String hotel, String city) {
@@ -21,8 +25,8 @@ public class BookingComAPI implements API {
         return list.toArray(new Room[list.size()]);
     }
 
-    private Room[] rooms = new Room[5];
-    {
+    public BookingComAPI() {
+        rooms = new Room[5];
         Room room1 = new Room(1, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Ukraine", "Kiev");
         Room room2 = new Room(2, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Ukraine", "Kiev");
         Room room3 = new Room(3, 300, 3, new Date(117, 8, 22, 12, 22, 32), "Ukraine", "Kiev");
@@ -36,8 +40,8 @@ public class BookingComAPI implements API {
         rooms[3] = room4;
         rooms[4] = room5;
 
-
     }
+    private Room[] rooms;
 
 
 }

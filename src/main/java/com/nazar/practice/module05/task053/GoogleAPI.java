@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class GoogleAPI implements API {
+    @Override
+    public Room[] getRooms() {
+        return new Room[0];
+    }
 
     @Override
     public Room[] findRooms(int price, int persons, String hotel, String city) {
@@ -20,9 +24,7 @@ public class GoogleAPI implements API {
         return list.toArray(new Room[list.size()]);
     }
 
-    private Room[] rooms;
-
-    {
+    public GoogleAPI() {
         rooms = new Room[5];
 
         Room room6 = new Room(6, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Libid", "Odessa");
@@ -36,7 +38,8 @@ public class GoogleAPI implements API {
         rooms[2] = room8;
         rooms[3] = room9;
         rooms[4] = room10;
-
     }
+
+    private Room[] rooms;
 
 }

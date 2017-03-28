@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class TripAdvisorAPI implements API {
+    @Override
+    public Room[] getRooms() {
+        return new Room[0];
+    }
 
     @Override
     public Room[] findRooms(int price, int persons, String hotel, String city) {
@@ -20,9 +24,7 @@ public class TripAdvisorAPI implements API {
         return list.toArray(new Room[list.size()]);
     }
 
-    private Room[] rooms;
-
-    {
+    public TripAdvisorAPI() {
         rooms = new Room[5];
 
         Room room11 = new Room(6, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Ukraine", "Kiev");
@@ -36,6 +38,8 @@ public class TripAdvisorAPI implements API {
         rooms[2] = room13;
         rooms[3] = room14;
         rooms[4] = room15;
-
     }
+
+    private Room[] rooms;
+
 }
