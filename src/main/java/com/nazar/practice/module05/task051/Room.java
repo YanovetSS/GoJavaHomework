@@ -83,6 +83,7 @@ public class Room {
         this.cityName = cityName;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -92,6 +93,7 @@ public class Room {
 
         if (price != room.price) return false;
         if (persons != room.persons) return false;
+        if (hotelName != null ? !hotelName.equals(room.hotelName) : room.hotelName != null) return false;
         return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
     }
 
@@ -101,6 +103,7 @@ public class Room {
         result = 31 * result + persons;
         result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
+
     }
 
     @Override

@@ -27,7 +27,7 @@ public class GoogleAPI implements API {
     public GoogleAPI() {
         rooms = new Room[5];
 
-        Room room6 = new Room(6, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Libid", "Odessa");
+        Room room6 = new Room(1, 100, 1, new Date(117, 8, 22, 12, 22, 32), "Ukraine", "Kiev");
         Room room7 = new Room(7, 200, 2, new Date(117, 8, 22, 12, 22, 32), "Libid", "Odessa");
         Room room8 = new Room(8, 300, 3, new Date(117, 8, 22, 12, 22, 32), "Libid", "Odessa");
         Room room9 = new Room(9, 400, 4, new Date(117, 8, 22, 12, 22, 32), "Libid", "Odessa");
