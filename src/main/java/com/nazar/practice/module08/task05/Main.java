@@ -11,7 +11,11 @@ public class Main {
         Food food2 = new Food("Morkwa","Ukraine",31);
         Food food3 = new Food("Ogirok","Ukraine",10);
         Food food4 = new Food("Pomidor","Ukraine",7);
-        Food food5 = new Food("Ananas","Ukraine",5);
+        Food food5 = new Food("Ananas","Ukraine",7);
+        Food food6 = new Food("Opeska","Ukraine",9);
+        Food food7 = new Food("Vishna","Ukraine",10);
+        Food food8 = new Food("Giro","Ukraine",23);
+
 
         System.out.println("Print my DB");
         iManageSystem.save(food1);
@@ -19,6 +23,9 @@ public class Main {
         iManageSystem.save(food3,150);
         iManageSystem.save(food4,200);
         iManageSystem.save(food5,300);
+        iManageSystem.save(food6,400);
+        iManageSystem.save(food7,350);
+        iManageSystem.save(food8,250);
         iManageSystem.printMyDB();
 
         System.out.print("Delete some food");
@@ -26,7 +33,7 @@ public class Main {
 
         System.out.println("Price = "+ iManageSystem.getPrice(food3));
 
-        iManageSystem.deleteById(1);
+        iManageSystem.deleteById(food4.getId());
 
         iManageSystem.get(12131);
 

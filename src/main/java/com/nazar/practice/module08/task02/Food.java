@@ -2,7 +2,7 @@ package com.nazar.practice.module08.task02;
 
 import com.nazar.practice.module08.task01.IdGeneratorsUtil;
 
-public class Food implements Comparable<Food>{
+public class Food {
     private final int id;
     private String name;
     private String country;
@@ -17,7 +17,7 @@ public class Food implements Comparable<Food>{
     }
 
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -66,20 +66,5 @@ public class Food implements Comparable<Food>{
                 "expiration = "+expiration+"," +"price ";
     }
 
-    @Override
-    public int compareTo(Food o) {
-       // int i = o1.getPrice() - o2.getPrice();
-        //if(i == 0){
-           // return o1.getUser().getCity().compareTo(o2.getUser().getCity());
-        //}
-        //return  i;
-   // }
-        if(o.getName().equals(this.name)){
-            return 0;
-        }
-            int i = o.getName().compareTo(this.name);
-            return i;
 
-
-    }
 }

@@ -7,7 +7,7 @@ import java.util.*;
 public class IManageSystemImpl implements IManageSystem<Food> {
     private Map<Food, Double> dataBase = new HashMap<>();
 
-    private static final Double WHEN_NO_PRICE_ = 0.0D;
+    private static final Double DEFAULT_PRICE = 0.0D;
 
     @Override
     public Food save(Food obj, double price) {
@@ -17,7 +17,7 @@ public class IManageSystemImpl implements IManageSystem<Food> {
 
     @Override
     public Food save(Food obj) {
-        dataBase.put(obj, WHEN_NO_PRICE_);
+        dataBase.put(obj, DEFAULT_PRICE);
         return obj;
     }
 
@@ -29,9 +29,13 @@ public class IManageSystemImpl implements IManageSystem<Food> {
 
     @Override
     public void deleteById(int id) {
-        for (Map.Entry<Food, Double> entry : dataBase.entrySet()) {
-            if (id == entry.getKey().getId()) {
-                dataBase.remove(entry);
+        // Map не можна видалаяти через forech , мапа зміщається і форіч падає разом з мапою.
+        // Мап видаляти тільки через ітератор!!!!!!!!!!
+        Iterator<Map.Entry<Food, Double>> iterator = dataBase.entrySet().iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getKey().getId() == id) {
+                System.out.println("delete by id " + id + " product - " + iterator.next().getKey().getName());
+                iterator.remove();
             }
         }
     }
@@ -73,31 +77,35 @@ public class IManageSystemImpl implements IManageSystem<Food> {
     @Override
     public void printProductsSortedByName() {
         System.out.println("Print products sorted by name(Key): ");
-        dataBase = new TreeMap<Food, Double>(dataBase);
-        TreeMap<Food,Double> dataBase1 = new TreeMap<Food, Double>(new Comparator<Food>() {
+        TreeMap<Food, Double> dataBase1 = new TreeMap<Food, Double>(new Comparator<Food>() {
             @Override
             public int compare(Food o1, Food o2) {
-                return o1.getName().compareToIgnoreCase(o2.getName());
+                return o1.getName().compareTo(o2.getName());
             }
         });
         dataBase1.putAll(dataBase);
         System.out.println(dataBase1);
-
     }
 
     @Override
     public void printProductsSortedByPrice() {
-        System.out.println("Print product sorted by Price(Value): ");
-        dataBase = new TreeMap<Food, Double>(dataBase);
-        List list = new ArrayList(dataBase.entrySet());
+        System.out.println();
+        System.out.print("Print product sorted by Price(Value): ");
 
-        Collections.sort(list, new Comparator<Map.Entry<Food,Double>>() {
+        List<Map.Entry<Food, Double>> entries = new ArrayList<Map.Entry<Food, Double>>(dataBase.entrySet());
+
+        Collections.sort(entries, new Comparator<Map.Entry<Food, Double>>() {
             @Override
-            public int compare(Map.Entry<Food,Double> o1, Map.Entry<Food,Double> o2) {
-                return o1.getValue().compareTo(o2.getValue());
+            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
+                Double value1 = o1.getValue();
+                Double value2 = o2.getValue();
+                return (value1 > value2) ? 1 : (value1 == value2) ? 0 : -1;
             }
         });
-
-        System.out.println(list);
+        System.out.println("sorted by value");
+        for (Map.Entry<Food, Double> entry : entries) {
+            System.out.print("" + entry.getKey() + " " + entry.getValue());
+        }
     }
 }
+
