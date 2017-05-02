@@ -11,7 +11,7 @@ public class Main {
         wordsToReplace.put("hehe", "Bigg BoSS");
         wordsToReplace.put("arara", "BATYA");
         try {
-            TextFileOperations fileWithSampleText = TextFileOperations.getInstance();
+            IOTribute fileWithSampleText = IOTribute.getInstance();
             System.out.println("Initial file contents:\n" + fileWithSampleText.readFileContentsToString());
             System.out.println("\nString with replaced words:");
             System.out.println(fileWithSampleText.replacer(wordsToReplace));

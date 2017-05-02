@@ -4,18 +4,18 @@ import java.io.*;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class TextFileOperations {
-    private static TextFileOperations fileWithSampleText;
+public class IOTribute {
+    private static IOTribute fileWithSampleText;
     private File textFile;
 
-    private TextFileOperations() throws IOException {
+    private IOTribute() throws IOException {
         makeEmptyTextFile("Yanovets.txt");
         fillFileWithSampleText();
     }
 
-    public static synchronized TextFileOperations getInstance() throws IOException {
+    public static synchronized IOTribute getInstance() throws IOException {
         if (fileWithSampleText == null) {
-            fileWithSampleText = new TextFileOperations();
+            fileWithSampleText = new IOTribute();
         }
         return fileWithSampleText;
     }
